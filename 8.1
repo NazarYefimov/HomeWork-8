@@ -1,0 +1,73 @@
+abstract class Shape {
+   
+    public abstract String getName();
+ 
+    public abstract void draw();
+   
+    public abstract double getArea();
+    
+    public abstract double getPerimeter();
+}
+
+class Circle extends Shape {
+    private double radius;
+    
+    public Circle(double radius) {
+        this.radius = radius;
+    }
+    
+    @Override
+    public String getName() {
+        return "Circle";
+    }
+    
+    @Override
+    public void draw() {
+        
+    }
+    
+    @Override
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+    
+    @Override
+    public double getPerimeter() {
+        return 2 * Math.PI * radius;
+    }
+}
+
+class Square extends Shape {
+    private double side;
+    
+    public Square(double side) {
+        this.side = side;
+    }
+    
+    @Override
+    public String getName() {
+        return "Square";
+    }
+    
+    @Override
+    public void draw() {
+       
+    }
+    
+    @Override
+    public double getArea() {
+        return side * side;
+    }
+    
+    @Override
+    public double getPerimeter() {
+        return 4 * side;
+    }
+}
+
+
+class GraphicEditor {
+    public void displayShapeName(Shape shape) {
+        System.out.println("The shape is " + shape.getName());
+    }
+}
